@@ -26,8 +26,8 @@
            (reduce #'+ big))
           ((equal "" x)
            (let ((sorted (sort big #'<)))
-             (if (> curr (first sorted))
-                 (top3 in 0 (cons curr (rest big)))
+             (if (> curr (car sorted))
+                 (top3 in 0 (cons curr (cdr big)))
                  (top3 in 0 big))))
            (t
             (top3 in (+ curr (parse-integer x)) big)))))
